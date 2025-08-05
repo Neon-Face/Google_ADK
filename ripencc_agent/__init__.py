@@ -1,0 +1,1 @@
+from . import ripencc_agent

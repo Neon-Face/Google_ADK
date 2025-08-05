@@ -1,0 +1,11 @@
+# macOS system files
+.DS_Store
+
+# Python virtual environment
+.venv/
+
+# UV (universal virtualenv) lock file
+uv.lock
+
+# Ignore data folder inside ripencc_agent
+ripencc_agent/data/
