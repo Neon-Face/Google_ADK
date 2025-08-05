@@ -74,7 +74,7 @@ def get_monthly_roa_data(country_code: str, ip_family: str, start_date: str, end
             "error_message": str(e)
         }
 
-ripencc_agent = Agent(
+root_agent = Agent(
     name="ripencc_agent",
     model=LLM_MODEL, 
     description="Provides accurate country-level monthly ROA coverage data based on IP version and date range.",
@@ -91,4 +91,3 @@ ripencc_agent = Agent(
     tools=[get_monthly_roa_data],
 )
 
-root_agent = ripencc_agent

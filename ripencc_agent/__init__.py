@@ -1,1 +1,1 @@
-from . import ripencc_agent
+from . import agent
