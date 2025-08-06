@@ -11,4 +11,4 @@ uv.lock
 ripencc_agent/data
 
 # Ignore pycache
-__pycache__/
+# __pycache__/
