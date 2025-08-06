@@ -37,7 +37,10 @@
 16. Can i use one agent session to deal with login and register?
 17. A session can be a chat history? or a mini app?
 18. Build a policy agent to help user understand how to use the app
-19. Different between agent app and traditional app: In traditional app, we interact with functions by clicking buttons. While in agent-based app, we communicate what we want to do with the agent. I think it is a new way of interaction. Especially for elder people. So basically every clicking can be done by an agent. And with more imagination, we may have agentOS, agentSocialMedia, agentPhone in the future, which we don't need to click at all. (Do some research about if there are any companies developing this.))
+19. Difference between agent app and traditional app: In traditional app, we interact with functions by clicking buttons. While in agent-based app, we communicate what we want to do with the agent. I think it is a new way of interaction. Especially for elder people. So basically every clicking can be done by an agent. And with more imagination, we may have agentOS, agentSocialMedia, agentPhone in the future, which we don't need to click at all. (Do some research about if there are any companies developing this.))
 20. Callback types: before and after (agent, model, tool)
 21. need to pass CallbackContext for agent callback function, return Optional\[types.Content]
 22. State is like a place to store all meta data of sessions
+23. Parallel Agents and Sequential Agents can work together
+24. Always separate `tools.py` and `agent.py`
+25. Use tool_context.actions.escalate = True to exit a loop   
