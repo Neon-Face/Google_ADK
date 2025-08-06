@@ -8,4 +8,4 @@
 uv.lock
 
 # Ignore data folder inside ripencc_agent
-ripencc_agent/data/
+ripencc_agent/data
