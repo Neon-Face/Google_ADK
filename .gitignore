@@ -12,3 +12,6 @@ ripencc_agent/data
 
 # Ignore pycache
 __pycache__/
+
+# Ignore .env
+.env
