@@ -1,5 +1,5 @@
 from google.adk import Agent
-from .tools import get_monthly_roa_data 
+from .tools import get_monthly_roa_coverage 
 
 roa_query_agent = Agent(
     name="roa_query_agent",
@@ -9,10 +9,10 @@ roa_query_agent = Agent(
         You return structured data showing monthly ROA coverage percentages for the specified parameters.
     """,
     instruction = """
-        ALWAYS use the tool `get_monthly_roa_data` with the provided country_code, ip_version, and date range. 
+        ALWAYS use the tool `get_monthly_roa_coverage` with the provided country_code, ip_version, and date range. 
         Do not attempt to interpret or reformat the data—simply return what the tool provides. 
         If the tool returns an error, report it clearly to the user.
     """
 ,
-    tools=[get_monthly_roa_data]
+    tools=[get_monthly_roa_coverage]
 )

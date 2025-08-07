@@ -1,4 +1,4 @@
-def get_monthly_roa_data(country_code: str, ip_family: str, start_date: str, end_date: str) -> dict:
+def get_monthly_roa_coverage(country_code: str, ip_family: str, start_date: str, end_date: str) -> dict:
     """
     Retrieves the monthly Route Origin Authorization (ROA) coverage data for specified country over a given time range and IP version.
     This tool queries ROA coverage — a measure of how much of the routed IP space in a given country is covered by valid ROAs — which helps assess routing security. 
