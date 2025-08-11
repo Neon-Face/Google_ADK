@@ -32,7 +32,7 @@ def get_monthly_roa_coverage(country_code: str, ip_family: str, start_date: str,
     """
     import sqlite3
 
-    ROA_DB_PATH = "ripencc_agent/data/insights.db"
+    DB_PATH = "ripencc_agent/data/insights.db"
     ROA_TABLE = "ROA_MONTHLY"
     SQL_QUERY = f'''
         SELECT date, percentage_space_covered_by_roa
@@ -46,7 +46,7 @@ def get_monthly_roa_coverage(country_code: str, ip_family: str, start_date: str,
     '''
 
     try:
-        conn = sqlite3.connect(ROA_DB_PATH)
+        conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
         cursor.execute(SQL_QUERY, (country_code, ip_family, start_date, end_date))
         rows = cursor.fetchall()
