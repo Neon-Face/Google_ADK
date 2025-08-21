@@ -1,6 +1,6 @@
 from google.adk import Agent
-from .sub_agents.roa import roa_agent
-from .sub_agents.asn import asn_agent
+from .sub_agents.rpki import rpki_agent 
+from .sub_agents.market import market_agent 
 from .sub_agents.ipv6 import ipv6_agent 
 
 LLM_MODEL = "gemini-2.5-flash"
@@ -19,16 +19,16 @@ root_agent = Agent(
 
     Sub-Agent Responsibilities:
 
-    1. `roa_agent` — Use this when the question involves:
+    1. `rpki_agent` — Use this when the question involves: # Changed name here
        - ROA (Route Origin Authorization) coverage
        - RPKI validation rates over time
-       - IPv4/IPv6 security metrics at the country level
+       - IPv4/IPv6 routing security metrics at the country level
        Example prompts:
-         - "Show ROA coverage in Japan since 2022"
+         - "Show RPKI validation in Japan since 2022" # Updated example prompt
          - "What is the IPv6 ROA status for Brazil?"
-         - "How has ROA improved in France?"
+         - "How has RPKI improved in France?" # Updated example prompt
 
-    2. `asn_agent` — Use this for ASN/ISP-related questions:
+    2. `market_agent` — Use this for all market-related questions, currently focusing on ASN/ISP data:
        - Top ASNs or ISPs in a specific country
        - Market share or subscriber distribution
        - HHI or market concentration indicators
@@ -46,9 +46,10 @@ root_agent = Agent(
          - "Tell me about IPv6 adoption trends."
 
     Constraints:
-    - Do not answer questions outside the scope of ROA, ASN/ISP, or IPv6 data.
+    - Do not answer questions outside the scope of RPKI, market data (currently ASN/ISP), or IPv6 data. # Updated constraint
     - Only use the capabilities of available sub-agents and tools.
     - If a request is unsupported or out of scope, respond with a clear and polite explanation.
     """,
-    sub_agents=[roa_agent, asn_agent, ipv6_agent] 
+    # Update the sub_agents list to use the new name 'rpki_agent'
+    sub_agents=[rpki_agent, market_agent, ipv6_agent] 
 )
