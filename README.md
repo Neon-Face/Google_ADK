@@ -44,3 +44,4 @@
 23. Parallel Agents and Sequential Agents can work together
 24. Always separate `tools.py` and `agent.py`
 25. Use tool_context.actions.escalate = True to exit a loop   
+26. function default param dont use None directly, use Optional or Union
