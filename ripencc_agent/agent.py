@@ -1,6 +1,7 @@
 from google.adk import Agent
 from .sub_agents.roa import roa_agent
-from .sub_agents.asn import asn_agent 
+from .sub_agents.asn import asn_agent
+from .sub_agents.ipv6 import ipv6_agent 
 
 LLM_MODEL = "gemini-2.5-flash"
 
@@ -36,10 +37,18 @@ root_agent = Agent(
          - "How competitive is the ISP market in the UK?"
          - "Which ASNs serve the most users in India?"
 
+    3. `ipv6_agent` — Use this for all IPv6-related data:
+       - IPv6 adoption rates from various sources (Google, Facebook, Akamai, Cisco, Cloudflare).
+       - Other general IPv6 metrics or information as tools become available.
+       Example prompts:
+         - "What is the IPv6 adoption rate in Brazil?"
+         - "Show me the IPv6 adoption from Google for Japan."
+         - "Tell me about IPv6 adoption trends."
+
     Constraints:
-    - Do not answer questions outside the scope of ROA or ASN/ISP data.
+    - Do not answer questions outside the scope of ROA, ASN/ISP, or IPv6 data.
     - Only use the capabilities of available sub-agents and tools.
     - If a request is unsupported or out of scope, respond with a clear and polite explanation.
     """,
-    sub_agents=[roa_agent, asn_agent]
+    sub_agents=[roa_agent, asn_agent, ipv6_agent] 
 )
